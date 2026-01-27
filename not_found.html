@@ -1,6 +1,6 @@
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="icon" type="image/png" href="https://donovan.rip/title.png">
-<title>👁‍🗨_👁‍🗨</title>
+<link rel="icon" type="image/png" href="/mari/mari sad.webp">
+<title>uh oh</title>
 <link rel="stylesheet" href="style.css">
 
 <link rel="preconnect" href="https://fonts.googleapis.com/">
@@ -13,14 +13,54 @@
 
 <div id="backhome">
      <!-- <img src="home.png" alt="back home" width="40" height="40" onclick="location.href='index.html';" style="cursor: pointer;"> --> 
-     <p style="font-size: 20px; cursor: pointer;" onclick="location.href='index.html';"><i>go back?</i></p>
+     <!-- <p style="font-size: 20px; cursor: pointer;" onclick="location.href='index.html';"><i>go back?</i></p> -->
 </div>
+
+
 
 <div id="text">
 <div id="textend">
-<img src="mewo.gif" alt="meow" width="168" height="126">
 
-<p style="font-size: 40px" ;=""><i><b>waiting for something to happen?</i></b></p>
+ <!-- THANK YOU SO FKIN MUCH TO @cyncrovee ON DISCORD FOR WRITING THIS SCRIPT FOR ME!! PLEASE GO SHOW HER SOME LOVE: https://cyncrovee.nekoweb.org/ -->    
+<script>
+
+    function swapImg() {
+        const image = document.getElementById("example-image");
+        switch (image.getAttribute("src")) {
+            case "/mari dialogue/mari one.gif":
+                image.src = "/mari dialogue/mari two.gif";
+                
+                break;
+            case "/mari dialogue/mari two.gif":
+                image.src = "/mari dialogue/mari three.gif";
+                
+                break;
+            case "/mari dialogue/mari three.gif":
+                image.src = "/mari dialogue/mari four.gif";
+                
+                break;
+            case "/mari dialogue/mari four.gif":
+                image.src = "/mari dialogue/mari five.gif";
+               
+                break;
+            case "/mari dialogue/mari five.gif":
+                image.src ="/mari dialogue/mari six.gif"               
+                break;
+            case "/mari dialogue/mari six.gif": 
+               location.href = "index.html";
+                break;    // This is the final image, so do nothing
+        }
+
+
+}
+</script>
+<img
+    id="example-image"
+    src="/mari dialogue/mari one.gif"
+    onclick="swapImg()"
+/>
+
+<!-- <p style="font-size: 40px" ;=""><i><b>waiting for something to happen?</i></b></p> -->
 
 
 
