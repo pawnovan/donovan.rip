@@ -1,51 +1,117 @@
+
+/*
+what to add:
+    - fix neko and give it restrictions on where it can go so u can see the effects on the things easier
+    - music player? perchance idk
+    - kill 2vb and his mans
+    - make portal into dropdown menu with a hamburger style button
+    - update music page to use soundcloud or spotify api to display last played song
+
+
+credits / resources:
+       - https://lilithdev.neocities.org/headspace/generator
+       - https://www.spriters-resource.com/pc_computer/omori/asset/185773/
+       - https://cyncrovee.nekoweb.org/
+       - https://fonts.google.com/specimen/Varela+Round
+       
+*/      
 body {
 /* background-color: #5b769f; */
 background-color: #c8a4e9;
-background-image: url(headspace\ overlay\ blur.png);
-background-repeat: repeat;
-
-
-  font-family: 'Varela Round', sans-serif;
-  overflow: hidden;
-
+font-family: 'Varela Round', sans-serif;
+overflow: hidden;
+a {
+    text-decoration: none;
 }
 
+}
+.moving-background{
+  background-image: url(headspace\ overlay\ blur\ fix.png);
+  background-repeat: repeat;
+  animation: animatedBackground 30s linear infinite; 
+}
+
+@keyframes animatedBackground {
+  from { background-position: 0 0; } 
+  to { background-position: 2560px 1440px; }  
+}
+
+
+
+/* hamburger menu */
 .portal {
-    flex-flow: row-reverse nowrap;
-    justify-content: space-between;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+    align-self: flex-end;
     position:fixed;
     display: flex;
+    line-height: 3vh;
+    max-height: 100vh;
+    max-width: 100vh;
+    transition: max-height 0.3s;
+    transition: opacity 0.3s;
+
 
     text-decoration: none;
     a {
         color: black;
     }
 
+    
     right: 3vh;
-    top: .1vh;
-    gap: 2vh;
+    top: 6vh;
+
 }
-/*
-what to add:
-    - portal top left with hyperlinks to pages like blog, tools, packs, whatever else, etc etc
-    - fix neko and give it restrictions on where it can go so u can see the effects on the things easier
-    - maybe fix spacing of socials at bottom
-    - music player? perchance idk
-    - add transparent bar on top like tokauas site
-    - add slowly panning headspace overlay in bg
-    - figure out what to do with mc skin Lolo
-    - kill 2vb and his mans
+.portal p {
+    opacity: 60%;
+    transition: opacity 0.3s;
+    max-width: 10vh;
+
+}
+
+.portal p:hover {
+    opacity: 100%;
+    transition: opacity 0.3s;
+    max-width: 100vh;
+    
+}
+
+#menu {
+    position: fixed;
+    right: 1vh;
+    top: 1vh;
+    cursor: pointer;
+    opacity: 60%;
+    transition: opacity 0.3s;
+    transform: scale(1);
+    transition: transform 0.3s;
+}  
+#menu:hover {
+    opacity: 100%;
+    transition: opacity 0.3s;
+    transform: scale(1.1);
+    transition: transform 0.3s;
+}
+#menuitems {
+    max-height: 0;
+    opacity: 0%;
+    overflow: hidden;
+    transition: opacity 0.3s ease, max-height .35s ease;
+    max-width: 10vh;    
+
+ 
+}
+
+#menuitems.show {
+    max-height: 40vh;
+    opacity: 80%;
+    transition: opacity .8s ease, max-height .35s ease;
+    max-width: 1000vh;
+    
+
+}
 
 
-
-
-
-    - credits / resources:
-        https://lilithdev.neocities.org/headspace/generator
-        https://www.spriters-resource.com/pc_computer/omori/asset/185773/
-        https://cyncrovee.nekoweb.org/
-
-*/
 #socials {
     position: fixed;
     bottom: 10px;
@@ -145,12 +211,174 @@ what to add:
 
 }
 
-#tutorial{
-    opacity: 40%;;
+.verticaldivider {
+    padding: 0;
+    display: flex;
+    align-items: flex-start;
+    margin: auto;
+    position:fixed;
+    right: 87vh;
+
 }
-a {
-    text-decoration: none;
+
+.horizontaldivider {
+    position: fixed;
+    padding: 0;
+    top: 50vh;
+    right: 87vh;
+    
+
+
 }
+#righttext {
+    position: fixed;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1px;
+    margin: auto;
+    right: 58vh;
+    top: 24.5vh;
+}
+#righttext p {
+    margin: 1px;
+    text-indent: 0;
+}
+#lefttext {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    position: fixed;
+    top: 24.5vh;
+    left: 50vh;
+    width: 45vw
+}
+
+#lefttext p {
+    margin: 1px;
+    padding-bottom: .5vh;
+}
+
+.genres {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    top: 28vh;
+    width: 60vh;
+}
+
+#nextpony {
+    position: fixed;
+    top: 35.8vh;
+    left: 52vh;
+;
+}
+
+#albuminfo {
+    display: flex;
+    position: fixed;
+    margin: auto;
+    gap: 1px;
+    align-items : flex-start;
+    flex-direction: column;
+    top: 59.5vh;
+    right: 52vh;
+}
+
+#albumcover {
+    position: fixed;
+    margin: auto;
+    top: 28vh;
+    right: 54.5vh;
+}
+
+#bandcampplayer {
+    position: fixed;
+    margin: auto;
+    top: 71vh;
+    right: 55vh;
+}
+
+
+#pony {
+    position: fixed;
+    padding: 10px;
+    left: 79.6vh;
+    top: 34.6vh;
+}
+
+#upbringing {
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    padding: 10px;
+    left: 51vh;
+    top: 36vh;
+    width: 25vh;
+}
+
+#albums {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 49vh;
+    left: 50vh;
+    align-items: flex-start;
+    gap: 1.5vh;
+    
+}
+
+#albums p {
+    margin-bottom: .2vh;
+}
+
+#covers {
+    display: flex;
+    flex-direction: row;
+    gap: 2.3vh;
+}
+
+#row1 {
+    display: flex;
+    flex-direction: row;
+    gap: 2.3vh;
+
+}
+
+#row1 img {
+    cursor: pointer;
+    opacity: 100%;
+    transition: scale 0.3s;
+}
+
+#row1 img:hover {
+    scale: 1.2;
+    transition: scale 0.3s;
+}
+
+#covers img {
+    cursor: pointer;
+    opacity: 100%;
+    transition: scale 0.5s;
+}
+
+#covers img:hover {
+    scale: 1.2;
+    transition: scale 0.3s;
+}
+
+
+
+
+
+
+
+
+
+
+
 
   /* #basket{
     position:fixed;

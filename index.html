@@ -8,30 +8,52 @@
 <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="moving-background">
 
 
-    <div id="text">
-        
+    <div id="text">      
         <div id="textend">
             <!-- image (thank you tokaua!! :3) -->
             <img src="/images/thankstokaua.png" alt="rainbow dash chilling on a cloud" width="300" height="170">
             
+            
+
+
+
+
+            <!-- alert -->
+            <p class="alert" style="font-size: 12px;"><span><i>this site is best viewed on desktop</i> x_x</span></p>
+
             <!-- portal -->
-            <p class="alert" style="font-size: 12px; "><span><b><i>this site is best viewed on desktop</i> x_x</b></span></p>
-                <div class="portal">
-                    <a href="https://donovan.rip/gallery">
-                        <p style="font-size:20px; cursor: pointer;">gallery</p>
-                    </a>
+                    <div id="menu">
+                        <img src="images/hamburger menu.png" onclick=showText(); height="45px" width="45px" id="menu">
+                    </div>
+                    <!-- clickable menu script-->
+                        <script>
+                            function showText() {
+                            document.getElementById('menuitems').classList.toggle('show');
+                         }
+                        </script>
+                    <div class="portal">
+                    <div id="menuitems" class="hidden">
+                        <a href="index.html">
+                        <p style="font-size:20px; cursor: pointer;">about</p> 
+                        </a>
 
-                    <a href="https://donovan.rip/music">
+                        <a href="music.html">
                         <p style="font-size:20px; cursor: pointer;">music</p> 
-                    </a>
+                        </a>
+                        
+                        <a href="https://donovan.rip/gallery">
+                        <p style="font-size:20px; cursor: pointer;">gallery</p>
+                        </a>
 
-                    <a href="https://donovan.rip/blog">
+                        <a href="https://donovan.rip/blog">
                         <p style="font-size:20px; cursor: pointer;">blog</p>
-                    </a>
+                        </a>
+                    </div>
                 </div>
+
 
             <!-- main text -->    
             <p style="font-size: 35px" ;=""><b>hey what's up, i'm donovan!</b></p>
@@ -46,6 +68,8 @@
         </div>
             
     </div>
+
+
     <div id="socials">
                         <a href="https://github.com/pawnovan" target="_blank">
                         <img src="logos/github logo.png" width="38" height="38">    
