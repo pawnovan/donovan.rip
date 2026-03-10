@@ -1,0 +1,355 @@
+/*
+what to add:
+    - fix neko and give it restrictions on where it can go so u can see the effects on the things easier
+    - music player? perchance idk
+    - kill 2vb and his mans
+    - make portal into dropdown menu with a hamburger style button
+    - update music page to use soundcloud or spotify api to display last played song
+
+
+credits / resources:
+       - https://lilithdev.neocities.org/headspace/generator
+       - https://www.spriters-resource.com/pc_computer/omori/asset/185773/
+       - https://cyncrovee.nekoweb.org/
+       - https://fonts.google.com/specimen/Varela+Round
+       
+*/      
+body {
+/* background-color: #5b769f; */
+background-color: #c8a4e9;
+font-family: 'Varela Round', sans-serif;
+overflow: hidden;
+min-width: 1200px;
+}
+
+body a {
+    text-decoration: none;
+}
+
+.moving-background{
+  background-image: url(headspace\ overlay\ blur\ fix.png);
+  background-repeat: repeat;
+  animation: animatedBackground 30s linear infinite; 
+}
+
+@keyframes animatedBackground {
+  from { background-position: 0 0; } 
+  to { background-position: 2560px 1440px; }  
+}
+
+/* hamburger menu */
+.portal {
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+    align-self: flex-end;
+    position: fixed;
+    display: flex;
+    line-height: 3vh;
+    max-height: 100vh;
+    max-width: 100vh;
+    transition: opacity 0.3s, max-height 0.3s;
+    text-decoration: none;
+    right: 3vh;
+    top: 6vh;
+}
+
+.portal a {
+    color: black;
+}
+
+.portal p {
+    opacity: 60%;
+    transition: opacity 0.3s;
+    max-width: 10vh;
+}
+
+.portal p:hover {
+    opacity: 100%;
+    transition: opacity 0.3s;
+    max-width: 100vh;
+}
+
+#menu {
+    position: fixed;
+    right: .5vw;
+    top: 1vh;
+    cursor: pointer;
+    opacity: 60%;
+    transform: scale(1);
+    transition: opacity 0.3s, transform 0.3s;
+}  
+
+#menu:hover {
+    opacity: 100%;
+    transform: scale(1.1);
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+#menuitems {
+    max-height: 0;
+    opacity: 0%;
+    overflow: hidden;
+    transition: opacity 0.3s ease, max-height .35s ease;
+    max-width: 10vh;    
+}
+
+#menuitems.show {
+    max-height: 40vh;
+    opacity: 80%;
+    transition: opacity .8s ease, max-height .35s ease;
+    max-width: 1000vh;
+}
+
+#socials {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#socials img {
+    opacity: 0.5;
+    filter: alpha(opacity=60);
+    transform: scale(1);
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+#socials img:hover {
+    opacity: 1.0;
+    filter: alpha(opacity=100);
+    transform: scale(1.2);
+    transition: opacity 0.3s, transform 0.3s;
+}
+ 
+#text {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+}
+
+#textend {
+
+}
+
+
+
+#basket {
+    position: fixed;
+    bottom: 10px;
+    right: 93.22%;
+    opacity: 40%;
+    transition: opacity 0.5s;
+}
+
+#guestbook {
+    position: fixed;
+    bottom: 120px;
+    right: 93%;
+    opacity: 0%;
+    transition: opacity 0.5s;
+}
+
+#container:hover #guestbook {
+    opacity: 60%;
+    transition: opacity 0.5s;
+}
+
+#container:hover #basket {
+    opacity: 80%;
+    transition: opacity 0.5s;
+}
+
+.alert {
+    position: absolute;
+    overflow: visible;
+    white-space: nowrap;
+    top: 0px;
+    left: 0px;
+    margin-top: 0px;
+    background: rgba(182, 146, 209, .2); 
+    width: 100vw; 
+}
+
+.alert span {
+    display: inline-block;
+    animation: marquee 16s linear infinite;
+}
+
+@keyframes marquee {
+    0%   { transform: translate(-126vh, 0); }
+    100% { transform: translate(90vw, 0); }
+}
+
+
+.verticaldivider {
+    padding-top: 1vh;
+    display: flex;
+    align-items: flex-start;
+    position: fixed;
+    right: 45.3vw;
+}
+
+.horizontaldivider {
+    position: fixed;
+    padding: 0;
+    top: 50vh;
+    right: 45.3vw;
+}
+
+#righttext {
+    position: fixed;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1px;
+    margin: auto;
+    right: 30vw;
+    top: 24.5vh;
+}
+
+#righttext p {
+    margin: 1px;
+    text-indent: 0;
+}
+
+#lefttext {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    position: fixed;
+    top: 24.5vh;
+    left: 25.8vw;
+    width: 46vw;
+}
+
+#lefttext p {
+    margin: 1px;
+    padding-bottom: .5vh;
+}
+
+.genres {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    top: 28vh;
+    width: 60vw;
+}
+
+#nextpony {
+    position: fixed;
+    top: 35.8vh;
+    left: 27.2vw;
+}
+
+#albuminfo {
+    display: flex;
+    position: fixed;
+    margin: auto;
+    gap: 1px;
+    align-items: flex-start;
+    flex-direction: column;
+    top: 59.5vh;
+    right: 27vw;
+}
+
+#albumcover {
+    position: fixed;
+    margin: auto;
+    top: 28vh;
+    right: 28.3vw;
+}
+
+#pony {
+    position: fixed;
+    padding: 10px;
+    left: 41.3vw;
+    top: 34.6vh;
+}
+
+#upbringing {
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    padding: 10px;
+    left: 27vw;
+    top: 36vh;
+    width: 12vw;
+}
+
+#albums {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 49vh;
+    left: 26vw;
+    align-items: flex-start;
+    gap: 1.5vh;
+}
+
+#albums p {
+    margin-bottom: .2rem;
+}
+
+#covers {
+    display: flex;
+    flex-direction: row;
+    gap: 1.3rem;
+}
+
+#row1 {
+    display: flex;
+    flex-direction: row;
+    gap: 1.3rem;
+}
+
+#row1 img {
+    cursor: pointer;
+    opacity: 100%;
+    transition: transform 0.3s;
+}
+
+#row1 img:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s;
+}
+
+#covers img {
+    cursor: pointer;
+    opacity: 100%;
+    transition: transform 0.3s;
+}
+
+#covers img:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s;
+}
+
+/* old code that i don't need but. dont want to delete 
+#basket{
+    position:fixed;
+    bottom: 40px;
+    right: 93.22%;
+
+    img {
+        opacity: 0.5;
+        filter: alpha(opacity=90);
+        transition: opacity 0.3s;
+        
+
+    }
+        img:hover +  {
+        opacity: 1.0;
+        filter: alpha(opacity=100);
+        transition: opacity 0.3s;
+        
+    
+        
+    }
+
+}
+*/
