@@ -2,14 +2,15 @@
 <link rel="icon" type="image/png" href="/mari/mari sad.webp">
 <title>uh oh!</title>
 <link rel="stylesheet" href="style.css">
-
 <link rel="preconnect" href="https://fonts.googleapis.com/">
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
 <link href="css2" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+<meta name="darkreader-lock" content="">
 </head>
 
 <body class="moving-background">
+<p class="alert" style="font-size: 1rem; "><span><i>this site is best viewed on desktop</i> x_x</span></p>
 
 
 
@@ -19,11 +20,12 @@
 </div>
 
 
-<p class="alert" style="font-size: 1rem; "><span><i>this site is best viewed on desktop</i> x_x</span></p>
 
-<div id="text">
+<div id="text"> 
+     
 <div id="textend">
      
+
 
  <!-- THANK YOU SO FKIN MUCH TO @cyncrovee ON DISCORD FOR WRITING THIS SCRIPT FOR ME!! PLEASE GO SHOW HER SOME LOVE: https://cyncrovee.nekoweb.org/ -->    
 <script>
@@ -41,12 +43,15 @@
     });
 
     function swapImg() {
+        let isTextHidden = false;
         const image = document.getElementById("example-image");
         switch (image.getAttribute("src")) {
             case "/mari dialogue/mari one.gif":
                 image.src = "/mari dialogue/mari two.gif";
-                
+                isTextHidden = true;
+                document.getElementById("example-image").classList.add("pan-down");
                 break;
+
             case "/mari dialogue/mari two.gif":
                 image.src = "/mari dialogue/mari three.gif";
                 
@@ -67,16 +72,25 @@
                 break;    // This is the final image, so do nothing
         }
 
+        if (isTextHidden === true) {
+          document.getElementById("hint-text").style.opacity = "0";
+          setTimeout(() => {
+              document.getElementById("hint-text").style.visibility = "hidden";
+          }, 500); 
+
+        }
 
 }
 </script>
+
 <img
     id="example-image"
     src="/mari dialogue/mari one.gif"
     onclick="swapImg()"
 />
 
-<p style="font-size: 2rem;"><i> click the text box to advance</i></p>
+<h1 id ="hint-text" style="font-size: 2rem;  "><i>click the text box to advance</i></h1>
+
 
 <!-- <p style="font-size: 40px" ;=""><i><b>waiting for something to happen?</i></b></p> -->
 
@@ -86,5 +100,6 @@
 
 </div>
 </div>
+
 </body>
 </html>

@@ -6,11 +6,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com/">
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+<meta name="darkreader-lock" content="">
 </head>
 
-<body class="moving-background">
-<p class="alert" style="font-size: 1rem;"><span><i>this site is best viewed on desktop</i> x_x</span></p>
 
+<body class="moving-background">
+    
+<p class="alert" style="font-size: 1rem;"><span><i>this site is best viewed on desktop</i> x_x</span></p>
 
 
     <div id="text">
@@ -19,43 +21,50 @@
             <img src="/images/thankstokaua.png" alt="rainbow dash chilling on a cloud" width="300" height="170">
  
             <!-- main text -->    
-            <p style="font-size: 35px" ;=""><b>hey what's up, i'm donovan!</b></p>
-            <p style="font-size: 33px" ;="">i'm a 19 year old philosophy student that lives in the pacific northwest</p>
-            <p style="font-size: 27px" ;="">some of my interests include rhythm games, creating art, and epistemology</p>
-            <p style="font-size: 17;"><i>For anything important, please contact me through Telegram.</i></p>
+            <p style="font-size: 3rem" ;=""><b>hey what's up, i'm donovan!</b></p>
+            <p style="font-size: 2.5rem" ;="">i'm a 19 year old philosophy student that lives in the pacific northwest</p>
+            <p style="font-size: 2rem" ;="">some of my interests include rhythm games, digital art, and epistemology</p>
+            <p style="font-size: 1.5rem"><i>For anything important, please contact me through Telegram or Discord.</i></p>
         </div>      
     </div>
              <!-- alert -->
 
-        <!-- portal -->
-                  <div id="menu">
-                        <img src="images/hamburger menu.png" onclick=showText(); height="4rem" width="4rem" id="menu">
-                    </div>
+<div id="menu">
+    <img src="images/circle-chevron-down-solid-full.png" onclick=showText();>
+</div>
+
                     <!-- clickable menu script-->
-                        <script>
-                            function showText() {
-                            document.getElementById('menuitems').classList.toggle('show');
-                         }
-                        </script>
+<script>
+    function showText() {
+    document.getElementById('menuitems').classList.toggle('show');
+    document.getElementById('menu').classList.toggle('show');
+    }
+    
+</script>
                     <div class="portal">
+                        
                         <div id="menuitems" class="hidden">
+
+
                             <a href="index.html">
-                            <p style="font-size:20px; cursor: pointer;">about</p> 
+                            <p style="font-size:1.5rem; cursor: pointer;">about</p> 
                             </a>
 
-                            <a href="https://donovan.rip/art.html">
-                            <p style="font-size:20px; cursor: pointer;">art</p>
+                            <a href="art.html">
+                            <p style="font-size:1.5rem; cursor: pointer;">art</p>
                             </a>
 
-                            <a href="https://donovan.rip/music.html">
-                            <p style="font-size:20px; cursor: pointer;">music</p> 
+                            <a href="music.html">
+                            <p style="font-size:1.5rem; cursor: pointer;">music</p> 
                             </a>    
 
-                            <a href="https://donovan.rip/blog">
-                            <p style="font-size:20px; cursor: pointer;">blog</p>
+                            <a href="blog.html">
+                            <p style="font-size:1.5rem; cursor: pointer;">blog</p>
                             </a>
+                        </div>
                     </div>
-                </div>
+                
+        </div>
 
 
     <div id="socials">

@@ -6,6 +6,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com/">
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+<meta name="darkreader-lock" content="">
 </head>
 
 
@@ -15,11 +16,11 @@
         
 
      <div id="arttitle">
-            <p style="font-size: 2.3rem" ;=""><b>music i enjoy</b></p>  
-                        <p style="font-size: 1.5rem" ;=""><b>i listen to a lot of different types of music, but my favorites are:</b></p>
+            <p style="font-size: 2.6rem" ;=""><b>music i enjoy</b></p>  
+                        <p style="font-size: 2rem" ;="">i listen to a lot of different types of music, but my favorites are:</p>
 
-            <p style="font-size: 1.3rem" ;=""><b>digicore, hardcore, speedcore, hardstyle, j-core, indie, midwest emo, ost, bedroom pop, artcore, and dnb</b></p>
-            <p style="font-size: 1.7rem" ;=""><b>these are a few of my favorite artists, PLEASE check out their work i promise it's good :)</b></p>
+            <p style="font-size: 1.5rem" ;="">digicore, hardcore, speedcore, hardstyle, j-core, indie, midwest emo, ost, bedroom pop, artcore, and dnb</p>
+            <p style="font-size: 2rem" ;="">these are a few of my favorite artists, PLEASE check out their work i promise it's good :)</p>
 
 
 
@@ -114,31 +115,39 @@
                         <img src="logos/bandcamp logo.png" width="50" height="50">  
                         </a>
     </div>
-                        <div id="menu">
-                        <img src="images/hamburger menu.png" onclick=showText(); height="4rem" width="4rem" id="menu">
-                    </div>
+<div id="menu">
+    <img src="images/circle-chevron-down-solid-full.png" onclick=showText();>
+</div>
+
                     <!-- clickable menu script-->
-                        <script>
-                            function showText() {
-                            document.getElementById('menuitems').classList.toggle('show');
-                         }
-                        </script>
+<script>
+    function showText() {
+    document.getElementById('menuitems').classList.toggle('show');
+    document.getElementById('menu').classList.toggle('show');
+    }
+    
+</script>
                     <div class="portal">
+                        
                         <div id="menuitems" class="hidden">
+
+
                             <a href="index.html">
-                            <p style="font-size:20px; cursor: pointer;">about</p> 
+                            <p style="font-size:1.5rem; cursor: pointer;">about</p> 
                             </a>
 
-                            <a href="https://donovan.rip/art">
-                            <p style="font-size:20px; cursor: pointer;">art</p>
+                            <a href="art.html">
+                            <p style="font-size:1.5rem; cursor: pointer;">art</p>
                             </a>
 
                             <a href="music.html">
-                            <p style="font-size:20px; cursor: pointer;">music</p> 
+                            <p style="font-size:1.5rem; cursor: pointer;">music</p> 
                             </a>    
 
-                            <a href="https://donovan.rip/blog">
-                            <p style="font-size:20px; cursor: pointer;">blog</p>
+                            <a href="blog.html">
+                            <p style="font-size:1.5rem; cursor: pointer;">blog</p>
                             </a>
+                        </div>
                     </div>
-                </div>
+                
+        </div>

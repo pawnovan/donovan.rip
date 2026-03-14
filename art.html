@@ -6,40 +6,152 @@
 <link rel="preconnect" href="https://fonts.googleapis.com/">
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+<meta name="darkreader-lock" content="">
 </head>
 
 <body class="moving-background">
         <script async src="oneko.js"></script>
-
-    
-            <div id="artgallery">
-
-       <p class="alert" style="font-size: 1rem; "><span><i>this site is best viewed on desktop</i> x_x</span></p>  
+        <p class="alert" style="font-size: 1rem; "><span><i>this site is best viewed on desktop</i> x_x</span></p>  
 
 
 
     
         <div id="arttitle">
-       <p style="font-size: 2rem" ;=""><b>art i've made</b></p>
-            <p style="font-size: 1.5rem" ;=""><i>i'm always working on getting better at my art! i scrap a lot of stuff and have loooots of form renders left over...</i></p>
-            <p style="font-size: 1.5rem" ;=""><i>these are just a few of my favorites, if you want to see more feel free to dm me on discord and i could show u the scraps... </i></p>
-             <p style="font-size: 1rem" ;=""><i>current fav: 666 over / fractured angel </i></p>
+       <p style="font-size: 2rem" ;=""><b>art portfolio</b></p>
+            <p style="font-size: 1.5rem" ;=""><i>this is my art! my main inspiration is edm music. if you are an artist and want to work, hit me up.</i></p>
         </div>
 
 
-            <div id="gallery">
-        <img style="border: #000000 .1rem solid;" src="images/666_redo.png" width="230vw" height="230vh">
+<div class="gallerytest">
+<!-- thanks @bruholiverlol on dc for helping me with this script, check him out here https://oliverspace.neocities.org/-->
+    <script>
+        const images = [
+            "/images/everlasting_LOL.png",
+            "/images/blossom_of_ashes.png",
+            "/images/666_redo.png",
+            "/images/vignette_logo.png",
+            "/images/axes_simpler_bg.png",
+            "/images/fractured angel lolz.png",
+            "/images/words_i_never_said.png",
+            "/images/change_myself_completely_black_bg.png"
+        ];
+        const dates = [
+            "3/13/2026",
+            "3/10/2026",
+            "3/9/2026",
+            "2/26/2026",
+            "3/12/2026",
+            "10/27/2025",
+            "9/22/2025",
+            "9/20/2025"
+        ];
+        const titles = [
+            "everlasting eternity",
+            "blossom of ashes",
+            "666 over!! redo",
+            "saberchamber 2025",
+            "establishedaxes pfp",
+            "fractured angel",
+            "words i never said",
+            "change myself completely"
+        ];
+        const inspo = [
+            "inspired by everlasting eternity by ludicin",
+            "inspired by blossom of ashes by ludicin",
+            "inspired by the album 666 over!!",
+            "created for saberchamber2025 by oermergeesh",
+            "commission for establishedaxes",
+            "inspired by fractured angel by dj raisei",
+            "inspired by absolutely nothing.",
+            "inspired by dxsbond metalheart tutorial",
+        ];    
 
-        <img style="border: #000000 .1rem solid;" src="images/vignette_logo.png" width="230vw" height="230vh">
-        </div>
-        <div id="gallerylandscape">
-                <img style="border: #000000 .1rem solid;" src="images/fractured angel lolz.png" width="400vw" height="250vw">
-                <img style="border: #000000 .1rem solid;" src="images/Words_I_Never_Said.png" width="400vw" height="250vw">
-                <img style="border: #000000 .1rem solid;" src="images/Change_Myself_Completely_Black_BG.png" width="400vw" height="250vw">
-        </div>
 
+    // pre loading
+    images.forEach(src => new Image().src = src);
+
+    let currentIndex =      0;
+    document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("example-image").src = images[currentIndex];
+    document.getElementById("titles").innerHTML = `<i>"${titles[currentIndex]}"</i>`;
+    document.getElementById("image-date").innerHTML = `<i>${dates[currentIndex]}</i>`;
+    document.getElementById("inspo").textContent = inspo[currentIndex];
+    });
+
+    function swapImg() {
+        const imgElement = document.getElementById("example-image");
+        
+        currentIndex++;
+
+        if (currentIndex < images.length) {
+            // next img
+            imgElement.src = images[currentIndex];
+            document.getElementById("image-date").innerHTML = `<i>${dates[currentIndex]}</i>`;
+            document.getElementById("titles").innerHTML = `<i>"${titles[currentIndex]}"</i>`;
+            document.getElementById("inspo").textContent = `${inspo[currentIndex]}`;
+
+
+        } else {
+            currentIndex = 0;
+            imgElement.src = images[currentIndex];
+            document.getElementById("image-date").innerHTML = `<i>${dates[currentIndex]}</i>`;
+            document.getElementById("titles").innerHTML = `<i>"${titles[currentIndex]}"</i>`;
+            document.getElementById("inspo").textContent = `${inspo[currentIndex]}`;
+
+        }
+    }
+    function swapImgBack() {
+        const imgElement = document.getElementById("example-image");
+        currentIndex--;
+
+        if (currentIndex >= 0) {
+            // previous img
+            imgElement.src = images[currentIndex];
+            document.getElementById("image-date").innerHTML = `<i>${dates[currentIndex]}</i>`;
+            document.getElementById("titles").innerHTML = `<i>"${titles[currentIndex]}"</i>`;
+            document.getElementById("inspo").textContent = `${inspo[currentIndex]}`;
+
+        } else {
+            currentIndex = images.length - 1;
+            imgElement.src = images[currentIndex];
+            document.getElementById("image-date").innerHTML = `<i>${dates[currentIndex]}</i>`;
+            document.getElementById("titles").innerHTML = `<i>"${titles[currentIndex]}"</i>`;
+            document.getElementById("inspo").textContent = `${inspo[currentIndex]}`;
+
+        }
+    }
+    </script>
+        <img class="cool"
+            id="example-image"
+            style="border: #000000 .1rem solid;"
+        />
+    <div id="arrows">
+        <p id="titles" style="font-size: 1.5rem; opacity: 0.7; margin: .2rem 0rem 0 5rem; text-align: right;"><i></i></p>
+
+        <div id="centerstuff">
+            <img       
+                src="/images/left arrow.png"
+                width="30rem"
+                height="50rem"
+                style="cursor: pointer;"
+                onclick="swapImgBack()"
+            />
+
+            <p id="image-date" style="font-size: 1.5rem; opacity: 0.7; margin: .2rem 0rem 0 0;"></i></p>
+
+            <img
+                src="/images/arrow.png"
+                width="30rem"
+                height="50rem"
+                style="cursor: pointer;"
+                onclick="swapImg()"
+            />
+        </div>
+        <p id="inspo" style="font-size: 1.5rem; opacity: 0.7; margin: .2rem 0rem 0 5rem;"></p>
     </div>
-          <div id="socials">
+</div>
+
+  <!--   <div id="socials">
                         <a href="https://github.com/pawnovan" target="_blank">
                         <img src="logos/github logo.png" width="38" height="38">    
                         </a>
@@ -68,38 +180,41 @@
                         <img src="logos/steam logo.png" width="36" height="36">
                         </a>
 
-
     </div>
+--> 
+<div id="menu">
+    <img src="images/circle-chevron-down-solid-full.png" onclick=showText();>
+</div>
 
-    </div>
-                    <div id="menu">
-                        <img src="images/hamburger menu.png" onclick=showText(); height="4rem" width="4rem" id="menu">
-                    </div>
                     <!-- clickable menu script-->
-                        <script>
-                            function showText() {
-                            document.getElementById('menuitems').classList.toggle('show');
-                         }
-                        </script>
+<script>
+    function showText() {
+    document.getElementById('menuitems').classList.toggle('show');
+    document.getElementById('menu').classList.toggle('show');
+    }
+    
+</script>
                     <div class="portal">
+                        
                         <div id="menuitems" class="hidden">
+
                             <a href="index.html">
-                            <p style="font-size:20px; cursor: pointer;">about</p> 
+                            <p style="font-size:1.5rem; cursor: pointer;">about</p> 
                             </a>
 
-                            <a href="https://donovan.rip/art">
-                            <p style="font-size:20px; cursor: pointer;">art</p>
+                            <a href="art.html">
+                            <p style="font-size:1.5rem; cursor: pointer;">art</p>
                             </a>
 
                             <a href="music.html">
-                            <p style="font-size:20px; cursor: pointer;">music</p> 
+                            <p style="font-size:1.5rem; cursor: pointer;">music</p> 
                             </a>    
 
-                            <a href="https://donovan.rip/blog">
-                            <p style="font-size:20px; cursor: pointer;">blog</p>
+                            <a href="blog.html">
+                            <p style="font-size:1.5rem; cursor: pointer;">blog</p>
                             </a>
+                        </div>
                     </div>
-                </div>
                 
         </div>
 
